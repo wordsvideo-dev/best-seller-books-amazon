@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Daily Bestsellers</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+    h1 { text-align: center; }
+    .book { margin-bottom: 15px; }
+    .title { font-weight: bold; }
+    .author { color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Amazon Daily Bestsellers</h1>
+  <div id="list">Loading...</div>
+  <script>
+    async function load() {
+      const res = await fetch("data/latest.json");
+      const books = await res.json();
+      const list = document.getElementById("list");
+      list.innerHTML = books.map(
+        (b, i) => `<div class="book">
+          <div class="title">#${i+1} <a href="${b.url}" target="_blank">${b.title}</a></div>
+          <div class="author">${b.author || ""}</div>
+        </div>`
+      ).join("");
+    }
+    load();
+  </script>
+</body>
+</html>
