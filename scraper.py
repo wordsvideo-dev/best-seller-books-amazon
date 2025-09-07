@@ -22,6 +22,8 @@ def fetch_bestsellers(category="books", country="US", limit=20):
     r.raise_for_status()
     data = r.json()
 
+    print('data.json:',data)
+    
     items = []
     for i, book in enumerate(data.get("data", {}).get("best_sellers", [])[:limit], 1):
         items.append({
