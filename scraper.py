@@ -25,14 +25,14 @@ def fetch_bestsellers(category="books", country="US", limit=20):
     print('data.json:',data)
     
     items = []
-    for i, book in enumerate(data.get("data", {}).get("best_sellers", [])[:limit], 1):
+    for i, book in enumerate(data.get("products", [])[:limit], 1):
         items.append({
-            "rank": i,
-            "title": book.get("product_title"),
-            "rating_num": book.get("product_num_ratings"),
-            "url": book.get("product_url"),
-            "price": book.get("product_price"),
-            "rating": book.get("product_star_rating")
+            "rank": book.get('rank'),
+            "title": book.get("title"),
+            "img": book.get("imgUrl"),
+            "url": book.get("link"),
+            "price": book.get("price"),
+            "rating": book.get("rating")
         })
     return items
 
