@@ -29,7 +29,7 @@ def fetch_bestsellers(category="books", country="US", limit=20):
         items.append({
             "rank": book.get('rank'),
             "title": book.get("title"),
-            "img": book.get("imgUrl"),
+            "img": book.get("imageUrl"),
             "url": book.get("link"),
             "price": book.get("price"),
             "rating": book.get("rating")
