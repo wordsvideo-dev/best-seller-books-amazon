@@ -8,7 +8,7 @@ RAPIDAPI_KEY = "37a8eb5dffmsh072d63ab576f67dp14657bjsn67dfcedf4352"
 
 # RapidAPI 配置
 RAPIDAPI_HOST = "realtime-amazon-data.p.rapidapi.com"
-BESTSELLERS_ENDPOINT = f"https://{RAPIDAPI_HOST}/bestsellers"
+BESTSELLERS_ENDPOINT = f"https://{RAPIDAPI_HOST}/best-sellers"
 
 headers = {
     "X-RapidAPI-Key": RAPIDAPI_KEY,
